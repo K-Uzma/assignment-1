@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tasks</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <div class="header">
+        <a class="highlight" href="javascript: void(0);" onclick="return display_todo_list();">To Do List</a>
+        <a class="float_end" href="javascript: void(0);" onclick="return display_create_form();">Create New</a>
+    </div>
+    <div class="container" id="create_task" style="display: none;">
+        <h3>Add Details</h3>
+        <form id="create_task_form" method="post" onsubmit="return submit_create_task_form()">
+
+            <label>Name</label>
+            <input class="form_input" type="text" name="name" id="name" required/>           
+
+            <label>Phone</label>
+            <input class="form_input" type="text" name="phone" id="phone" required/>
+
+            <label>Email</label>
+            <input class="form_input" type="email" name="email" id="email" required/>            
+
+            <button class="btn" type="submit">Create</button>
+        </form>
+    </div>
+    <div class="container" id="update_task" style="display: none;">
+        <h3>Update Details</h3>
+        <form id="update_task_form" method="post" onsubmit="return submit_update_task_form()">
+
+            <label>Name</label>
+            <input class="form_input" type="text" name="up_name" id="up_name" required/>           
+
+            <label>Phone</label>
+            <input class="form_input" type="text" name="up_phone" id="up_phone" required/>
+
+            <label>Email</label>
+            <input class="form_input" type="email" name="up_email" id="up_email" required/>   
+            
+            <input type="hidden" name="up_id" id="up_id" required/>
+
+            <button class="btn" type="submit">Update</button>
+        </form>
+    </div>
+    <div id="my_tasks_list">
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Phone</th>
+                    <th>Email</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody id="show_list">
+                
+            </tbody>
+        </table>
+    </div>
+
+<script src="script.js"></script>
+</body>
+</html>
